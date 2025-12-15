@@ -6,18 +6,23 @@ import java.util.ArrayList;
 // ==================================================================================
 class Midia {
     // TODO: Atributos privados (titulo, duracao, tocando)
+    protected int duracao;
     protected String titulo; // Use protected ou private com getters se preferir
     protected boolean tocando;
 
     public Midia(String titulo) {
         // TODO: Inicialize titulo e tocando = false
+        this.titulo = titulo;
+        tocando = false;
     }
 
     public String tocar() {
-        // TODO: 
+        // TODO:
         // Se já estiver tocando, retorne "[titulo] ja esta reproduzindo."
         // Se não, mude tocando para true e retorne "Reproduzindo midia: [titulo]"
-        return "";
+        if(tocando) return titulo + " ja esta reproduzindo.";
+        tocando = !tocando;
+        return "Reproduzindo midia: " + titulo;
     }
 }
 
@@ -25,23 +30,41 @@ class Midia {
 // PASSO 2: SUBCLASSES (FILME E MUSICA)
 // ==================================================================================
 
-// class Filme extends Midia {
-    // Atributo extra: diretor
-    // TODO: Construtor (chame super)
-    
-    // TODO: Sobrescreva o método tocar().
-    // Mude tocando = true.
-    // Retorne "Exibindo filme: [titulo] do diretor [diretor]"
-// }
 
-// class Musica extends Midia {
+class Filme extends Midia {
+    String diretor;
+
+    public Filme(String titulo, String d){
+        super(titulo);
+        diretor = d;
+    }
+
+    @Override
+    public String tocar(){
+        tocando = true;
+        return "Exibindo filme: " + titulo + " do diretor " + diretor;
+    }
+}
+
+class Musica extends Midia {
     // Atributo extra: artista
+    String artista;
     // TODO: Construtor (chame super)
-    
+
+    public Musica(String b, String a){
+        super(b);
+        artista = a;
+    }
+
     // TODO: Sobrescreva o método tocar().
+    @Override
+    public String tocar(){
+        tocando = true;
+        return "Tocando musica: " + titulo + " - " + artista;
+    }
     // Mude tocando = true.
     // Retorne "Tocando musica: [titulo] - [artista]"
-// }
+}
 
 
 // ==================================================================================
@@ -56,6 +79,9 @@ class Plataforma {
 
     public void reproduzirTudo() {
         System.out.println("--- PLAYLIST ---");
+        for(int i = 0; i < playlist.size(); i++){
+            System.out.println(playlist.get(i).tocar());
+        }
         // TODO: Percorra a lista e chame o método tocar() de cada elemento.
         // Imprima o resultado de cada chamada.
     }
@@ -69,7 +95,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Plataforma cineDev = new Plataforma();
         // Para testes unitários manuais do passo 1
-        Midia midiaTemp = null; 
+        Midia midiaTemp = null;
 
         while (scanner.hasNextLine()) {
             String linha = scanner.nextLine().trim();
@@ -85,8 +111,9 @@ public class Main {
 
                     case "midia": // PASSO 1
                         midiaTemp = new Midia(tokens[1]);
+                        cineDev.adicionar(midiaTemp);
                         break;
-                    
+
                     case "tocar_midia": // PASSO 1
                         if (midiaTemp != null) System.out.println(midiaTemp.tocar());
                         break;
@@ -94,13 +121,13 @@ public class Main {
                     case "filme": // PASSO 2
                         // Ex: filme Matrix Wachowski
                         // TODO: Descomente
-                        // cineDev.adicionar(new Filme(tokens[1], tokens[2]));
+                        cineDev.adicionar(new Filme(tokens[1], tokens[2]));
                         break;
 
                     case "musica": // PASSO 2
                         // Ex: musica HeyJude Beatles
                         // TODO: Descomente
-                        // cineDev.adicionar(new Musica(tokens[1], tokens[2]));
+                        cineDev.adicionar(new Musica(tokens[1], tokens[2]));
                         break;
 
                     case "playlist": // PASSO 3

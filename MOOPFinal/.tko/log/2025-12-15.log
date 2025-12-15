@@ -1,0 +1,12 @@
+2025-12-15 17:04:05, MOVE, v:1, k:local@questão1, mode:PICK
+2025-12-15 17:04:08, EXEC, v:1, k:local@questão1, mode:FULL, size:139, fail:COMP
+2025-12-15 17:06:53, MOVE, v:1, k:local@questão1, mode:BACK
+2025-12-15 17:07:06, MOVE, v:1, k:local@questão1, mode:PICK
+2025-12-15 17:07:09, EXEC, v:1, k:local@questão1, mode:FULL, rate:66, size:139
+2025-12-15 17:14:59, EXEC, v:1, k:local@questão1, mode:FREE, size:140
+2025-12-15 17:15:57, EXEC, v:1, k:workspaces@maratona-final-de-poo-andreszpyt, mode:FREE, size:394
+2025-12-15 17:16:13, MOVE, v:1, k:workspaces@maratona-final-de-poo-andreszpyt, mode:PICK
+2025-12-15 17:16:16, EXEC, v:1, k:workspaces@maratona-final-de-poo-andreszpyt, mode:FULL, size:394, fail:COMP
+2025-12-15 17:16:20, EXEC, v:1, k:workspaces@maratona-final-de-poo-andreszpyt, mode:FULL, size:394, fail:COMP
+2025-12-15 17:17:06, MOVE, v:1, k:local@questão1, mode:PICK
+2025-12-15 17:17:08, EXEC, v:1, k:local@questão1, mode:FULL, rate:100
