@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-15_18-30-47",
+            "content": "\npublic class Cajado extends Arma{\n    double dano;\n    double poderMagico;\n\n    public Cajado(String nome, int danoBase, int durabilidade) throws ArmaQuebradaException {\n        super(nome, danoBase, durabilidade);\n    }\n\n    @Override\n    public void calcularDano() {\n        \n    }\n\n    public void afiacao() {\n        if(durabilidade <= 0){\n            throw new ArmaQuebradaException(\"Arma quebrada!\");\n        }\n        dano = danoBase + (poderMagico/2.0);\n        durabilidade -= 10;\n    }\n}\n",
+            "lines": "22"
+        }
+    ]
+}

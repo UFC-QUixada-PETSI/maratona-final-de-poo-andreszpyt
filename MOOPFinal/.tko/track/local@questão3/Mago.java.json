@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-15_18-30-47",
+            "content": "\npublic class Mago extends Personagem{\n    int dano;\n    Arma arma;\n\n\n\n    public Mago(String nome, int vida, int estamina, Arma arma, int dano, Arma arma1) {\n        super(nome, vida, estamina, arma);\n        this.dano = dano;\n        this.arma = arma1;\n    }\n\n\n\n    public Mago(String nome) {\n        super(nome);\n        this.dano = dano;\n    }\n\n    @Override\n    public boolean atacar() {\n        if(estamina < 25){\n            throw new SemEstaminaException(nome + \" est\u00e1 exausto e n\u00e3o consegue se mover!\");\n        }\n        estamina -= 25;\n        dano = arma.danoBase + 10;\n        return false;\n    }\n}\n",
+            "lines": "30"
+        }
+    ]
+}

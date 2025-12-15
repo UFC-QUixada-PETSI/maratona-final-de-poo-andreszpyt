@@ -11,3 +11,5 @@
 2025-12-15 17:17:06, MOVE, v:1, k:local@questão1, mode:PICK
 2025-12-15 17:17:08, EXEC, v:1, k:local@questão1, mode:FULL, rate:100
 2025-12-15 17:35:16, EXEC, v:1, k:local@questão1, mode:FULL, rate:100
+2025-12-15 18:30:37, MOVE, v:1, k:local@questão3, mode:PICK
+2025-12-15 18:30:47, EXEC, v:1, k:local@questão3, mode:FULL, size:261, fail:COMP

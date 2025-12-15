@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-15_18-30-47",
+            "content": "\npublic abstract class Arma {\n    String nome;\n    int danoBase;\n    int durabilidade;\n\n    public Arma(String nome, int danoBase, int durabilidade) {\n        this.nome = nome;\n        this.danoBase = danoBase;\n        this.durabilidade = 100;\n    }\n\n    @Override\n    public String toString() {\n        return \"Arma{\" +\n                \"nome='\" + nome + '\\'' +\n                \", danoBase=\" + danoBase +\n                \", durabilidade=\" + durabilidade +\n                '}';\n    }\n\n    public void equipar(Arma x) {\n\n    }\n\n    public abstract void calcularDano();\n\n    public String getNome() {\n        return nome;\n    }\n\n    public void setNome(String nome) {\n        this.nome = nome;\n    }\n\n    public int getDanoBase() {\n        return danoBase;\n    }\n\n    public void setDanoBase(int danoBase) {\n        this.danoBase = danoBase;\n    }\n\n    public int getDurabilidade() {\n        return durabilidade;\n    }\n\n    public void setDurabilidade(int durabilidade) {\n        this.durabilidade = durabilidade;\n    }\n}\n",
+            "lines": "51"
+        }
+    ]
+}

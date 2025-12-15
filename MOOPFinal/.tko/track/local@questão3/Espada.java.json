@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-15_18-30-47",
+            "content": "\npublic class Espada extends Arma{\n    int afiacao;\n    int dano;\n\n    public Espada(String nome, int danoBase, int durabilidade) throws ArmaQuebradaException{\n        super(nome, danoBase, durabilidade);\n        this.afiacao = afiacao;\n    }\n\n    @Override\n    public void calcularDano() {\n        if(dano <= 0){\n            throw new ArmaQuebradaException(\"Arma quebrada!\");\n        }\n        dano = danoBase + afiacao;\n        durabilidade -= 5;\n    }\n}\n",
+            "lines": "19"
+        }
+    ]
+}

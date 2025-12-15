@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-15_18-30-47",
+            "content": "\npublic abstract class Personagem {\n    String nome;\n    int vida;\n    int estamina;\n    Arma arma;\n\n\n    public Personagem(String nome, int vida, int estamina, Arma arma) {\n        this.nome = nome;\n        this.vida = vida;\n        this.estamina = estamina;\n        this.arma = arma;\n    }\n\n    public Personagem(String nome) {\n        this.nome = nome;\n    }\n\n    public String equipar(Arma p) {\n        this.arma = p;\n        return nome + \" equipou \" + p.getNome();\n    }\n    public abstract boolean atacar();\n\n    public void descansar() {\n        System.out.println(nome+\"descansou. Estamina: \"+ estamina);\n    }\n}\n",
+            "lines": "29"
+        }
+    ]
+}
